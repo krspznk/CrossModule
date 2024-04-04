@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Позняк Модуль
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <app-input (formData)="onReceiveFormData($event)"></app-input>
+        <div *ngIf="receivedFormData && receivedFormData.length">
+          <h3>Обчислені фігури:</h3>
+          <ion-list>
+            <ion-item *ngFor="let figure of receivedFormData">
+              <ion-label>
+                <h4>Тип: {{ figure.type }}</h4>
+                <p><strong>Дані :</strong> {{ figure.data }}</p>
+                <p><strong>Площа:</strong> {{ figure.area }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

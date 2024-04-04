@@ -1,0 +1,19 @@
+<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-label position="floating">Кількість кіл: </ion-label>
+    <ion-input formControlName="circle" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Кількість колець: </ion-label>
+    <ion-input formControlName="ring" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Кількість еліпсів: </ion-label>
+    <ion-input formControlName="ellipse" type="number"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" type="submit" [disabled]="!dataForm.valid">Відправити</ion-button>
+  <ion-button expand="full" (click)="replaceCenter()">Перемістити</ion-button>
+</form>
